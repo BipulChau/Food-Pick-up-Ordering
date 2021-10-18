@@ -17,6 +17,7 @@ const loadMenu = () => {
             src="${element.imglink}"
             class="img-reponsive img-rounded img-menu"
           />
+          <p><span id="item-price">${element.name}</span></p>
           <p>Price: $<span id="item-price">${element.price}</span></p>
         </div>
         <div class="col-md-6 item-description" id="item-description">${element.description}</div>
