@@ -12,7 +12,7 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM menu;`)
       .then(data => {
-        const menuItems = {data};
+        const menuItems = data.rows;
         console.log(menuItems)
         res.render({ menuItems });
       })
