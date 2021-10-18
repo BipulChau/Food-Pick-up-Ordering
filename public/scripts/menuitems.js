@@ -6,7 +6,7 @@ const loadMenu = () => {
   $.get(
     "/api/menu",
     (data) => {
-      let menuItems = data.menuItems;
+      let menuItems = data.menuItems; // array
       let container = $("#menuitems");
       if (menuItems.length > 0) {
         menuItems.forEach((element) => {
