@@ -13,6 +13,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM menu;`)
       .then(data => {
         const menuItems = data.rows;
+        console.log(menuItems)
         res.json({ menuItems });
       })
       .catch(err => {
