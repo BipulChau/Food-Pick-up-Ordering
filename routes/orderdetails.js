@@ -34,7 +34,8 @@ module.exports = (db) => {
       `;
 
     return pool.query(query_text, queryParams)
-    .then(console.log("successfully inserted"))
+    .then(console.log("successfully inserted 🥳🐶"))
+    .catch(err => console.log(err));
 
   });
 

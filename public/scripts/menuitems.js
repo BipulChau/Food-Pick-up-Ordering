@@ -36,7 +36,7 @@ const loadMenu = () => {
 loadMenu();
 
 $( "#userForm" ).submit(function( event ) {
-  alert( "Handler for .submit() called." );
+  alert( "Placing your order ☕️🥤🧋" );
   event.preventDefault();
   let fullname = $("#fullName").val();
   let address = $("#address").val();
