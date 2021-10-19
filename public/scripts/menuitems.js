@@ -35,5 +35,25 @@ const loadMenu = () => {
 
 loadMenu();
 
+$( "#userForm" ).submit(function( event ) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+  let fullname = $("#fullName").val();
+  let address = $("#address").val();
+  let phnumber = $("#phNumber").val();
+  console.log(fullname);
+  console.log(address);
+  console.log(phnumber);
+
+let customerDetails = {
+fullname,
+address,
+phnumber
+};
+
+console.log(customerDetails);
+
+});
+
 
 })
