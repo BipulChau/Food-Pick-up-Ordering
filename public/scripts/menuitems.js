@@ -41,13 +41,18 @@ $( "#userForm" ).submit(function( event ) {
   let fullname = $("#fullName").val();
   let address = $("#address").val();
   let phnumber = $("#phNumber").val();
-let customerDetails = {
+let customer= {
 fullname,
 address,
 phnumber
 };
+console.log(customer);
 
-console.log(customerDetails);
+// jQuery.post( url [, data ] [, success ] [, dataType ] )
+
+$.post("/api/order", customer, (res) => {
+  console.log("Oggy Poggy 🐻");
+} )
 
 });
 
