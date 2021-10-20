@@ -23,7 +23,7 @@ module.exports = (db) => { // function being exported which is called at server.
   router.post("/", (req, res) => {
     const { address, fullname, phnumber } = req.body; //{address: Toronto, fullname: Raman, phnumber: 1234567890}
 
-    // console.log (customer)
+    console.log (req.body)
 
 
     let queryParams = [fullname, address, phnumber]; //['Raman', 'Toronto', '12213213']
