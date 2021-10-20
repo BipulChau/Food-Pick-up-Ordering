@@ -46,6 +46,13 @@ phnumber
 };
 console.log(customer);
 
+// Order ready button --> delete the order
+
+$('#orderTable').on('click', '.btn', function deleteRow() {
+  $(this).closest('tr').remove();
+  return false;
+});
+
 // jQuery.post( url [, data ] [, success ] [, dataType ] )
 
 $.post("/api/order", customer, (res) => { // using jquery we are sending the form values, i.e. cusstomer details to the server. url used for this purpose is "/api/order" and we are passing details using variable named customer. Next step we go to server.js where we will create  app.use("/api/order", orderRoutes(db)); And them go to routes folder ->o rderdetails.js where we will creare router to handle customer data which is being passed from ajax post request from menuitems.js where we are passing customer details to the router
@@ -57,6 +64,7 @@ $.post("/api/order", customer, (res) => { // using jquery we are sending the for
 } )
 
 });
+
 
 
 })
