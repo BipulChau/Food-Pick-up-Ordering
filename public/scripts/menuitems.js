@@ -1,37 +1,65 @@
-$(() => {
+var orders = [];
+var actualOrder = [];
+var menuItems = [];
+var totalAmount = 0;
+
 // making a get request to see some data... jQuery.get( url [, data ] [, success ] [, dataType ] )
-const loadMenu = () => {
-  $.get(
-    "/api/menu",
-    (data) => {
-      let menuItems = data.menuItems; // array
-      let container = $("#menuitems");
-      if (menuItems.length > 0) {
-        menuItems.forEach((element) => {
-          container.append(`<li class="list-group-item menu-item row">
-        <div class="pull-left text-center col-md-3 item-image">
-          <img
-            id="item-image"
-            src="${element.imglink}"
-            class="img-reponsive img-rounded img-menu"
-          />
-          <p><span id="item-price">${element.name}</span></p>
-          <p>Price: $<span id="item-price">${element.price}</span></p>
-        </div>
-        <div class="col-md-6 item-description" id="item-description">${element.description}</div>
 
-        <div class="pull-right col-md-3 item-quantity">
-          <input type="number" min=0 id="${element.id}"/>
-        </div>
-      </li>`);
+
+$(() => {
+  const loadMenu = () => {
+    $.get(
+      "/api/menu",
+      (data) => {
+        menuItems = data.menuItems; // array
+        orders = menuItems.map((item) => { // The map() method creates a new array with the results of calling a function for every array element. The map() method calls the provided function once for each element in an array, in order.
+          return {
+            id: item.id,
+            quantity: 0,
+          };
         });
-      }
-    },
-    "json"
-  );
-};
+        console.log(orders); // test
+        let container = $("#menuitems");
+        if (menuItems.length > 0) {
+          menuItems.forEach((element) => {
+            container.append(`<li class="list-group-item menu-item row">
+          <div class="pull-left text-center col-md-3 item-image">
+            <img
+              id="item-image"
+              src="${element.imglink}"
+              class="img-reponsive img-rounded img-menu"
+            />
+            <p><span id="item-price">${element.name}</span></p>
+            <p>Price: $<span id="item-price">${element.price}</span></p>
+          </div>
+          <div class="col-md-6 item-description" id="item-description">${element.description}</div>
 
-loadMenu();
+          <div class="pull-right col-md-3 item-quantity">
+            <input type="number" min=0 id="menuItemQuantity-${element.id}"/>
+          </div>
+        </li>`);
+          }
+          //1. use jquery selector to target the input in line 38,  2.const handler= funcction(), 3. attach a change handler(key up/)
+          );
+        }
+      },
+      "json"
+    ); var orderinputs = $("input");
+    orderinputs.on("change", function () {
+      console.log("order is coming") // do sth
+    });
+  };
+
+  loadMenu();
+// working to get order details... orderContainer id is "#orderDetails"
+// let orderContainer = $("#orderDetails");
+// for (let i of orders) { // getting inside array [{id:1, quantity:0}, {id:1, quantity:0}, {id:1, quantity:0}]
+// if ($(i.id.val())){
+//   menuItems.forEach((element) => {
+//     orderContainer.append(<li> Bipul </li>)
+//   })
+// }
+// }
 
 $( "#userForm" ).submit(function( event ) { //event handler for submit - modal after pressing confirm button
   alert( "Placing your order ☕️🥤🧋" );
@@ -45,6 +73,14 @@ address,
 phnumber
 };
 console.log(customer);
+
+$('#orderTable').on('click', '.btn', function deleteRow() {
+  $(this).closest('tr').remove();
+  return false;
+});
+//console.log($(input))
+//getting the id of the menu
+//let $menuID= $(`#$${element.id}`)
 
 // jQuery.post( url [, data ] [, success ] [, dataType ] )
 
