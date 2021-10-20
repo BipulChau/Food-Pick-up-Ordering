@@ -19,14 +19,14 @@ const pool = new Pool({
   database: "midterm",
 });
 
-module.exports = (db) => {
+module.exports = (db) => { // function being exported which is called at server.js using const orderRoutes
   router.post("/", (req, res) => {
-    const { address, fullname, phnumber } = req.body;
+    const { address, fullname, phnumber } = req.body; //{address: Toronto, fullname: Raman, phnumber: 1234567890}
 
     // console.log (customer)
 
 
-    let queryParams = [fullname, address, phnumber];
+    let queryParams = [fullname, address, phnumber]; //['Raman', 'Toronto', '12213213']
     console.log(queryParams);
     const query_text = `
       INSERT INTO customers(fullname, address, phnumber)
