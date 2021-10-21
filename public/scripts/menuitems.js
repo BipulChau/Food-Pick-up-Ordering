@@ -39,14 +39,28 @@ $(() => {
           </div>
         </li>`);
           }
-          //1. use jquery selector to target the input in line 38,  2.const handler= funcction(), 3. attach a change handler(key up/)
+          //1. use jquery selector to target the input in line 38,  2.const handler= funcction(), 3. attach a change handler(keyup/)
           );
         }
       },
       "json"
-    ); var orderinputs = $("input");
+    );
+    var orderinputs = $("input");
     orderinputs.on("change", function () {
       console.log("order is coming") // do sth
+      let quantity =  $("#item-description").siblings("input").val()
+      console.log (quantity);
+     // console.log(orderinputs.val()) // do sth
+      let orderContainer = $("#orderDetails");
+for (let i of orders) { // getting inside array [{id:1, quantity:0}, {id:1, quantity:0}, {id:1, quantity:0}]
+if (orderinputs){
+  menuItems.forEach((element) => {
+    //orderContainer.append(`<li> $$("input").val() </li>`)
+    //console.log(orderinputs)
+  })
+
+}
+}
     });
   };
 
