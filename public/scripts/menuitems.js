@@ -35,7 +35,7 @@ $(() => {
           <div class="col-md-6 item-description" id="item-description">${element.description}</div>
 
           <div class="pull-right col-md-3 item-quantity">
-            <input type="number" min=0 id="menuItemQuantity"/>
+            <input type="number" min=0 id=${element.id}/>
           </div>
         </li>`);
           }
@@ -48,6 +48,9 @@ $(() => {
     var orderinputs = $("#menuitems");
     orderinputs.on("change", 'input',function () {
       console.log("What to do next???😳")
+      let target = $(this); // gives the id of input
+      console.log(target)
+      console.log(target.val( )) // indiviual menu input
     });
   };
 
