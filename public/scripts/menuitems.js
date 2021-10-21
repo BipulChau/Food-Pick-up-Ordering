@@ -19,25 +19,17 @@ $(() => {
           };
         });
         console.log(orders); // test
-        let container = $("#menuitems");
+        let container = $(".shop-items");
         if (menuItems.length > 0) {
           menuItems.forEach((element) => {
-            container.append(`<li class="list-group-item menu-item row">
-          <div class="pull-left text-center col-md-3 item-image">
-            <img
-              id="item-image"
-              src="${element.imglink}"
-              class="img-reponsive img-rounded img-menu"
-            />
-            <p><span id="item-price">${element.name}</span></p>
-            <p>Price: $<span id="item-price">${element.price}</span></p>
+            container.append(`<div class="shop-item">
+          <span class="shop-item-title">${element.name}</span>
+          <img class="shop-item-image" src="${element.imglink}">
+          <div class="shop-item-details">
+              <span class="shop-item-price">$${element.price}</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
           </div>
-          <div class="col-md-6 item-description" id="item-description">${element.description}</div>
-
-          <div class="pull-right col-md-3 item-quantity">
-            <input type="number" min=0 id="menuItemQuantity-${element.id}"/>
-          </div>
-        </li>`);
+      </div>`);
           }
           //1. use jquery selector to target the input in line 38,  2.const handler= funcction(), 3. attach a change handler(keyup/)
           );
