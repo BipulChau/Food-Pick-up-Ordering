@@ -21,7 +21,7 @@
   <!-- <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script> -->
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/menuitems.js"></script>
-  <script type="text/javascript" src="/scripts/order_confirm_reload.js"></script>
+  <script type="text/javascript" src="/scripts/cart.js" async></script>
 </head>
 
 <body>
@@ -52,17 +52,66 @@
 
 <!-- -->
   <!-- Page-specific (main) content here -->
-  <main class="container page-body">
+  <<main class="container page-body">
     <div class="jumbotron">
-      <h1 class="display-4">Welcome to coffee shop!</h1>
-      <p class="lead">Please place your order below</p>
+      <h1 class="display-4 text-center">Welcome to coffee shop!</h1>
+      <p class="lead text-center">Please place your order below</p>
     </div>
-    <ul class="list-group container" id="menuitems"></ul>
+    <!--<ul class="list-group container" id="menuitems"></ul>
 <div class="row text-center">
 <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#confirmOrder" id="orderBtn">
  Order
 </button>
-</div>
+</div>-->
+
+<!-----experimental code for addign quantity and cart-->
+
+<section class="container content-section">
+  <h2 class="section-header text-center">Menu</h2>
+  <div class="shop-items">
+      <div class="shop-item">
+          <span class="shop-item-title">Espresso</span>
+          <img class="shop-item-image" src="images/espresso.jpg">
+          <div class="shop-item-details">
+              <span class="shop-item-price">$4.00</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+          </div>
+      </div>
+      <div class="shop-item">
+          <span class="shop-item-title">Iced-Coffee</span>
+          <img class="shop-item-image" src="Images/iced-coffee.jpg">
+          <div class="shop-item-details">
+              <span class="shop-item-price">$2.99</span>
+              <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+          </div>
+      </div>
+      <div class="shop-item">
+          <span class="shop-item-title">Latte</span>
+          <img class="shop-item-image" src="Images/latte.jpeg">
+          <div class="shop-item-details">
+              <span class="shop-item-price">$4.99</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+          </div>
+      </div>
+
+  </div>
+</section>
+
+<section class="container content-section">
+  <h2 class="section-header">Cart</h2>
+  <div class="cart-row">
+      <span class="cart-item cart-header cart-column">ITEM</span>
+      <span class="cart-price cart-header cart-column">PRICE</span>
+      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+  </div>
+  <div class="cart-items">
+  </div>
+  <div class="cart-total">
+      <strong class="cart-total-title">Total</strong>
+      <span class="cart-total-price">$0</span>
+  </div>
+  <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+</section>
 
 <div class="modal" id="confirmOrder" role="dialog">
   <div class="modal-dialog">

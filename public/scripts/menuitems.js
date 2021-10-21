@@ -53,7 +53,7 @@ $(() => {
      // console.log(orderinputs.val()) // do sth
       let orderContainer = $("#orderDetails");
 for (let i of orders) { // getting inside array [{id:1, quantity:0}, {id:1, quantity:0}, {id:1, quantity:0}]
-if (orderinputs){
+if (orderinputs) {
   menuItems.forEach((element) => {
     //orderContainer.append(`<li> $$("input").val() </li>`)
     //console.log(orderinputs)
