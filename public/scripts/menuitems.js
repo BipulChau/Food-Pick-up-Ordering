@@ -47,33 +47,12 @@ $(() => {
     );
     var orderinputs = $("input");
     orderinputs.on("change", function () {
-      console.log("order is coming") // do sth
-      let quantity =  $("#item-description").siblings("input").val()
-      console.log (quantity);
-     // console.log(orderinputs.val()) // do sth
-      let orderContainer = $("#orderDetails");
-for (let i of orders) { // getting inside array [{id:1, quantity:0}, {id:1, quantity:0}, {id:1, quantity:0}]
-if (orderinputs){
-  menuItems.forEach((element) => {
-    //orderContainer.append(`<li> $$("input").val() </li>`)
-    //console.log(orderinputs)
-  })
-
-}
-}
+      console.log("What to do next???😳")
     });
   };
 
   loadMenu();
-// working to get order details... orderContainer id is "#orderDetails"
-// let orderContainer = $("#orderDetails");
-// for (let i of orders) { // getting inside array [{id:1, quantity:0}, {id:1, quantity:0}, {id:1, quantity:0}]
-// if ($(i.id.val())){
-//   menuItems.forEach((element) => {
-//     orderContainer.append(<li> Bipul </li>)
-//   })
-// }
-// }
+
 
 $( "#userForm" ).submit(function( event ) { //event handler for submit - modal after pressing confirm button
   alert( "Placing your order ☕️🥤🧋" );
