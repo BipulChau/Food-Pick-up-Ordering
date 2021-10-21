@@ -35,7 +35,7 @@ $(() => {
           <div class="col-md-6 item-description" id="item-description">${element.description}</div>
 
           <div class="pull-right col-md-3 item-quantity">
-            <input type="number" min=0 id="menuItemQuantity-${element.id}"/>
+            <input type="number" min=0 id="menuItemQuantity"/>
           </div>
         </li>`);
           }
@@ -45,8 +45,8 @@ $(() => {
       },
       "json"
     );
-    var orderinputs = $("input");
-    orderinputs.on("change", function () {
+    var orderinputs = $("#menuitems");
+    orderinputs.on("change", 'input',function () {
       console.log("What to do next???😳")
     });
   };
