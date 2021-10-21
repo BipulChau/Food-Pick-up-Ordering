@@ -57,9 +57,9 @@ $(() => {
 $( "#userForm" ).submit(function( event ) { //event handler for submit - modal after pressing confirm button
   alert( "Placing your order ☕️🥤🧋" );
   event.preventDefault();
-  let fullname = $("#fullName").val(); // using if of each input to get the value
-  let address = $("#address").val(); // using if of each input to get the value
-  let phnumber = $("#phNumber").val(); // using if of each input to get the value
+  let fullname = $("#fullName").val(); // using id of each input to get the value
+  let address = $("#address").val(); // using id of each input to get the value
+  let phnumber = $("#phNumber").val(); // using id of each input to get the value
 let customer= { //creating object using destructuring method which is equivalent to {fullname: 'Raman', address: 'Toronto', phnumber:'1234567890'}
 fullname,
 address,
